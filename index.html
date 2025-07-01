@@ -1,12 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entregame S1</title>
+    <title>Sistema Interactivo de Ruta</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
-<script src="./Script/app.js"></script>    
+
+    <div id="intro" class="section active">
+        <h1>Bienvenido a tu Aventura Interdimensional</h1>
+        <p>Prepárate para un viaje único. ¿Estás listo para comenzar?</p>
+        <button onclick="startGame()">Comenzar Aventura</button>
+    </div>
+
+    <div id="level1" class="section hidden">
+        <h2>Elige tu sendero:</h2>
+        <p>¿Qué camino te llama más la atención?</p>
+        <button onclick="choosePath('logica')">Ruta del Saber Lógico</button>
+        <button onclick="choosePath('simulado')">Mundo Simulado</button>
+        <button onclick="choosePath('trampa')">Acceso Erróneo</button>
+    </div>
+
+    <div id="level2" class="section hidden">
+        <h2>Te encuentras frente a tres puertas misteriosas...</h2>
+        <p>Una vez que elijas, tu destino quedará sellado.</p>
+        <button onclick="chooseDoor('roja')">Puerta Roja</button>
+        <button onclick="chooseDoor('azul')">Puerta Azul</button>
+        <button onclick="chooseDoor('verde')">Puerta Verde</button>
+    </div>
+
+    <div id="dataValidation" class="section" style="margin-top: 40px;">
+        <h2>Valida tus Datos</h2>
+        <label for="name">Nombre:</label><br>
+        <input type="text" id="name" placeholder="Ingresa tu nombre"><br><br>
+
+        <label for="age">Edad:</label><br>
+        <input type="number" id="age" placeholder="Ingresa tu edad"><br><br>
+
+        <button onclick="validateData()">Validar Datos</button>
+        <p id="message"></p>
+    </div>
+
+    <script src="./script/app.js"></script>
+
 </body>
 </html>
